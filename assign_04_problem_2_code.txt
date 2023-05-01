@@ -1,0 +1,35 @@
+import java.util.Arrays;
+
+public class ArrayPositions {
+    /**
+     * This function takes an integer N and an array A of N numbers as arguments.
+     * It prints all array positions that store a number less than or equal to 10 and the number stored in that position.
+     *
+     * @param N (int): The number of elements in the array
+     * @param A (int[]): The array of N numbers
+     */
+    public static void printPositions(int N, int[] A) {
+        try {
+            // Check if the length of the array is equal to N
+            if (A.length != N) {
+                throw new IllegalArgumentException("The length of the array must be equal to N");
+            }
+
+            // Iterate through the array and print positions and values less than or equal to 10
+            for (int i = 0; i < N; i++) {
+                if (A[i] <= 10) {
+                    System.out.println("Position " + i + ": " + A[i]);
+                }
+            }
+        } catch (IllegalArgumentException e) {
+            // Log the error
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 10, 15, 20, 25, 30, 35, 40};
+        int n = arr.length;
+        printPositions(n, arr);
+    }
+}

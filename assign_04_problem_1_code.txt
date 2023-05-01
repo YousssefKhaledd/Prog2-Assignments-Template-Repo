@@ -1,0 +1,42 @@
+import java.util.Arrays;
+
+public class ArrayOperations {
+    
+    /**
+     * This function takes an integer N and an array A of N numbers as arguments.
+     * It performs the following operations on the array:
+     * 1. Multiply each element of the array by 2
+     * 2. Add 1 to each element of the array
+     * 3. Reverse the array
+     * 
+     * @param N (int): The number of elements in the array
+     * @param A (int[]): The array of N numbers
+     * @return int[]: The modified array after performing the above operations
+     */
+    public static int[] performOperations(int N, int[] A) {
+        // Multiply each element of the array by 2
+        for (int i = 0; i < N; i++) {
+            A[i] *= 2;
+        }
+        
+        // Add 1 to each element of the array
+        for (int i = 0; i < N; i++) {
+            A[i] += 1;
+        }
+        
+        // Reverse the array
+        for (int i = 0; i < N / 2; i++) {
+            int temp = A[i];
+            A[i] = A[N - i - 1];
+            A[N - i - 1] = temp;
+        }
+        
+        return A;
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int[] modifiedArr = performOperations(5, arr);
+        System.out.println(Arrays.toString(modifiedArr));
+    }
+}
