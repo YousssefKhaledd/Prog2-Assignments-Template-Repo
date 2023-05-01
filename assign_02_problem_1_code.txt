@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class PrintNumbers {
+    /**
+     * This function takes a number N as input and prints numbers from 1 to N in separate lines.
+     * 
+     * @param n The number up to which the numbers should be printed
+     */
+    public static void printNumbers(int n) {
+        // Iterate from 1 to n and print each number on a separate line
+        for (int i = 1; i <= n; i++) {
+            System.out.println(i);
+        }
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = scanner.nextInt();
+        scanner.close();
+        
+        // Call the printNumbers function with the input number
+        printNumbers(n);
+    }
+}

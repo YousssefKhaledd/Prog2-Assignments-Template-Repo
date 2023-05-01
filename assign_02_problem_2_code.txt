@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    /**
+     * This function takes a number as input and prints its multiplication table from 1 to 12
+     *
+     * @param num (int): The number whose multiplication table is to be printed
+     */
+    public static void printMultiplicationTable(int num) {
+        for (int i = 1; i <= 12; i++) {
+            System.out.println(num + " x " + i + " = " + (num * i));
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+        printMultiplicationTable(num);
+    }
+}

@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class LeftAngledTriangle {
+    /**
+     * This function takes an integer N as input and prints a left angled triangle
+     * with N rows.
+     *
+     * @param N (int): The number of rows in the left angled triangle
+     */
+    public static void printLeftAngledTriangle(int N) {
+        try {
+            // Check if N is a positive integer
+            if (N <= 0) {
+                throw new IllegalArgumentException("N must be a positive integer");
+            }
+
+            // Print the left angled triangle
+            for (int i = 1; i <= N; i++) {
+                for (int j = 1; j <= i; j++) {
+                    System.out.print("* ");
+                }
+                System.out.println();
+            }
+        } catch (IllegalArgumentException e) {
+            // Log the error
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of rows in the left angled triangle: ");
+        int N = scanner.nextInt();
+        printLeftAngledTriangle(N);
+    }
+}
