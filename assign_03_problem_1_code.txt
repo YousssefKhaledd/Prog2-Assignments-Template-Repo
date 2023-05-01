@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class PyramidPrinter {
+    /**
+     * This function takes an integer N as input and prints a pyramid with N rows.
+     *
+     * @param N (int): The number of rows in the pyramid
+     */
+    public static void printPyramid(int N) {
+        // Loop through each row
+        for (int i = 1; i <= N; i++) {
+            // Print spaces before the first asterisk
+            for (int j = 1; j <= N - i; j++) {
+                System.out.print(" ");
+            }
+
+            // Print asterisks for this row
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+
+            // Move to the next line
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        // Get user input for the number of rows
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of rows in the pyramid: ");
+        int N = scanner.nextInt();
+
+        // Print the pyramid
+        printPyramid(N);
+    }
+}
