@@ -1,0 +1,19 @@
+public class Human {
+    public String name; 
+    public int age; 
+    public String gender;
+    
+    protected Human(String name, int age, String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+    
+    protected void printData() {
+        System.out.println("Name: "+name+"\nAge: "+age+"\nGender: "+gender);
+    }
+    
+    final public void greet() {
+        System.out.println("Good morning!");
+    }
+}

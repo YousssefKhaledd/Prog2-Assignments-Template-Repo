@@ -1,0 +1,66 @@
+
+
+//human class
+package BankSystem;
+
+public class Human {
+	//attributes 
+	protected String Name;
+	protected int Age;
+	protected String Gender;
+	
+	//constructor 
+	public Human(String Name, int Age, String Gender){
+		this.Name = Name;
+		this.Age = Age;
+		this.Gender = Gender;
+	}
+	
+	//methods
+	public void PrintData(){
+		System.out.println("Name: "+Name);
+		System.out.println("Age: "+Age);
+		System.out.println("Gender: "+Gender);
+	}
+	
+	//method that cannot be overridden
+	public final void Greet(){
+		System.out.println("Good Morning");
+	}
+	
+}
+
+//Employee class
+package BankSystem;
+
+public class Employee extends Human {
+	//attributes
+	private int salary;
+	private String department;
+	
+	//constructor
+	public Employee(String Name, int Age, String Gender, int salary, String department){
+		super(Name, Age, Gender);
+		this.salary = salary;
+		this.department = department;
+	}
+	
+	//methods
+	public void PrintData(){
+		System.out.println("Name: "+Name);
+		System.out.println("Age: "+Age);
+		System.out.println("Gender: "+Gender);
+		System.out.println("Salary: "+salary);
+		System.out.println("Department: "+department);
+	}
+	
+	//getter functions
+	public int getSalary(){
+		return salary;
+	}
+	
+	public String getDepartment(){
+		return department;
+	}
+	
+}
