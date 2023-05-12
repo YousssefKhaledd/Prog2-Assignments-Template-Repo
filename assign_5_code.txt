@@ -1,0 +1,53 @@
+
+
+
+public class BankAccount {
+    private static final String country = "Egypt"; // country same for all objects
+    private static int NumOfUsers = 0;  // Number of users in the system
+    private static int NumOfCalls = 0; // Number of calls of functions in the system
+    private double balance;
+    private String username;
+    private String bankname;
+
+    // Constructor with 0 balance
+    public BankAccount(){
+        balance = 0;
+        NumOfUsers++;
+        System.out.println("Bank account created");
+    }
+
+    // Constructor with balance [x]
+    public BankAccount(double balance){
+        this.balance = balance;
+        NumOfUsers++;
+        System.out.println("Bank account created");
+    }
+
+    // function to deposite money 
+    public void Deposite(double amount){
+        balance += amount;
+        NumOfCalls++;
+    }
+
+    // function to withdraw money
+    public void withdraw(double amount){
+        balance -= amount;
+        NumOfCalls++;
+    }
+
+    // getter for balance
+    public double getBalance(){
+        return balance;
+    }
+
+    public static void main(String[] args) {
+        BankAccount account1 = new BankAccount();
+        BankAccount account2 = new BankAccount(100);
+        account2.Deposite(50);
+        account2.withdraw(25);
+
+        System.out.println("Final balance for Account 2: " + account2.getBalance());
+        System.out.println("Number of users in the system: " + NumOfUsers);
+        System.out.println("Number of calls for functions: " + NumOfCalls);
+    }
+}
